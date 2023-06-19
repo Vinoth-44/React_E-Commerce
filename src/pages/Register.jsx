@@ -1,7 +1,13 @@
 import React from 'react'
 import { Footer, Navbar } from "../components";
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 const Register = () => {
+    const navigate = useNavigate();
+    const handleRegister = () => {
+        navigate('/product');
+    }
     return (
         <>
             <Navbar />
@@ -42,7 +48,7 @@ const Register = () => {
                                 <p>Already has an account? <Link to="/login" className="text-decoration-underline text-info">Login</Link> </p>
                             </div>
                             <div className="text-center">
-                                <button class="my-2 mx-auto btn btn-dark" type="submit" disabled>
+                                <button class="my-2 mx-auto btn btn-dark" type="submit" onClick={handleRegister}>
                                     Register
                                 </button>
                             </div>
